@@ -140,3 +140,21 @@ SLList<T>& SLList<T>::operator=(const SLList<T>& other) {
     
     return *this;
 }
+
+template <typename T>
+void SLList<T>::rotate_right(unsigned k) {
+    if(empty() || size() == 1) return;
+
+    for(int i = 0; i < k; i++) {
+        SLLNode<T>* cur_2nd_last = head;
+        for(int j = 0; j < size() - 2; j++) {
+            cur_2nd_last = cur_2nd_last->next;
+        }
+
+        
+        tail->next = head;
+        head = tail;
+        tail = cur_2nd_last;
+        cur_2nd_last->next = nullptr;
+    }
+}
