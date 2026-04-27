@@ -38,7 +38,7 @@ int main(void) {
     
     input.close();
     
-    //list.rotate_right(47);
+    list.rotate_right(47);
     
     Graph<std::string> graph;
     while (!list.empty()) {
