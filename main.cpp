@@ -23,6 +23,7 @@ int main(void) {
     
     list.rotate_right(47);
     
+    
     Graph<std::string> graph;
     while (!list.empty()) {
         auto data = list.pop_front();
