@@ -198,3 +198,14 @@ bool Graph<T>::isConnected() const {
     return true;
 }
 
+template <typename T>
+void Graph<T>::removeSelfEdges() {
+    for (int i = 0; i < edges.size(); ++i) {
+        for (int j = 0; j < edges[i].size(); ++j) {
+            if (edges[i][j] == i) {
+                edges[i].erase(edges[i].begin()+j);
+                --j;
+            }
+        }
+    }
+}
